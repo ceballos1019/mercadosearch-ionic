@@ -8,13 +8,12 @@
 </ion-header>
 
 <ion-content>
-
   <ion-item *ngFor="let item of items" color="light">
     <ion-thumbnail item-start>
       <img src="{{item.thumbnail}}">
     </ion-thumbnail>
     <h2>{{item.title}}</h2>
     <p>Vendidos: {{item.sold_quantity}}</p>
-    <span>$ {{item.price}}</span>
+    <span>$ {{item.currency_id}} {{item.price}}</span>
   </ion-item>
 </ion-content>
