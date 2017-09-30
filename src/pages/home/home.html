@@ -1,14 +1,20 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
+  <ion-navbar color="dark" padding>
+    <ion-title text-center>
+      MercadoSearch <a href="https://github.com/ceballos1019" target="_blank">@ceballos1019</a>
     </ion-title>
+    <ion-searchbar (ionInput)="searchItems($event)" margin-top></ion-searchbar>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+
+  <ion-item *ngFor="let item of items" color="light">
+    <ion-thumbnail item-start>
+      <img src="{{item.thumbnail}}">
+    </ion-thumbnail>
+    <h2>{{item.title}}</h2>
+    <p>Vendidos: {{item.sold_quantity}}</p>
+    <span>$ {{item.price}}</span>
+  </ion-item>
 </ion-content>
